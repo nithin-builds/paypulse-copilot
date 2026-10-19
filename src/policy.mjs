@@ -1,0 +1,2 @@
+export function requireApproval(action,a){if(["provide_dispute_evidence","pay_order","send_invoice","accept_dispute_claim"].includes(action)&&(!a||a.action!==action||!a.approvedBy))throw Error("HUMAN_APPROVAL_REQUIRED");return true}
+export function buildEvidencePayload(x){if(!x?.evidence_type||!x?.evidence_info)throw Error("INVALID_EVIDENCE");return{evidences:[{evidence_type:x.evidence_type,evidence_info:x.evidence_info,notes:String(x.notes||"").slice(0,2000)}]}}
