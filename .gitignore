@@ -1,0 +1,4 @@
+scopepay-ai-deploy.tar.gz
+site-push.mjs
+node_modules/
+.env*
