@@ -1,0 +1,1 @@
+export class AuditLog{constructor(){this.events=[]}record(event){const row=Object.freeze({at:new Date().toISOString(),...event});this.events.push(row);return row}toJSON(){return JSON.stringify({schema:"paypulse.audit.v1",exportedAt:new Date().toISOString(),events:this.events},null,2)}}
